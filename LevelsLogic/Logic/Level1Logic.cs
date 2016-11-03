@@ -31,21 +31,57 @@ namespace LevelsLogic.Logic
             }
             return result;
         }
+
+        public static string GetHashStringFromBool(bool[] ans)
+        {
+            string result = "";
+            int degree, symbol;
+            for(int i = 0; i < ans.Length; i++)
+            {
+                degree = 32768;
+                symbol = 0;
+                for(int j = 0; j < 16 && i < ans.Length; j++, i++)
+                {
+                    if (ans[i])
+                        symbol += degree;
+                    degree /= 2;
+                }
+                i--;
+                char c = (char)symbol;
+                result = result + c;
+            }
+            return result;
+        }
+
         public void AddTask(string text, String ans, String description, int part)
         {
             DataLevel1 data = new DataLevel1();
             data.Text = text;
             data.Descriptions = description;
-            data.Ans = GetBoolFromStringBool(ans);
+            data.Ans = GetHashStringFromBool(GetBoolFromStringBool(ans));
             data.Part = part;
             _dataRepository.AddData(data);
         }
-
-        public string CheckTast(string ans, String id)
+        
+        public string CheckTask(string ans, int part)
         {
-            //Very hard function
-            String correctAns = "";
-            return correctAns;
+            String check = "";
+            string correctAns = _dataRepository.GetDataByPart(part).Ans;
+            for(int i = 0; i < ans.Length; i++)
+            {
+                check += ((char)(ans[i] ^ correctAns[i]));
+            }
+            return check;
+        }
+
+        public void DeleteAllLevel()
+        {
+            _dataRepository.DeleteAll();
+        }
+
+        public void DeleteLevelPart(int part)
+        {
+            _dataRepository.DeleteByPart(part);
         }
 
         public DataLevel1 GetTast(int part)

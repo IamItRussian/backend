@@ -29,9 +29,9 @@ namespace DB.Repositories
             _dataCollection.DeleteMany(d => true);
         }
 
-        public void DeleteById(ObjectId id)
+        public void DeleteByPart(int part)
         {
-            _dataCollection.DeleteOne(d => d.Id.Equals(id));
+            _dataCollection.DeleteOne(d => d.Part.Equals(part));
         }
 
         public List<DataLevel1> GetAllData()
@@ -44,7 +44,7 @@ namespace DB.Repositories
             return _dataCollection.AsQueryable().FirstOrDefault(d => d.Part.Equals(part));
         }
 
-        public void UpdateDataById(ObjectId id, string text, string description, bool ans, int part)
+        public void UpdateDataById(ObjectId id, string text, string description, String ans, int part)
         {
             var update = Builders<DataLevel1>.Update
                .Set("Text", text)

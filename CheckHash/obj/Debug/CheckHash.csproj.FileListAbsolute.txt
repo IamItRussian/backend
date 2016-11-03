@@ -1,0 +1,16 @@
+D:\C#\Russian\CheckHash\bin\Debug\CheckHash.exe.config
+D:\C#\Russian\CheckHash\obj\Debug\CheckHash.csprojResolveAssemblyReference.cache
+D:\C#\Russian\CheckHash\bin\Debug\CheckHash.exe
+D:\C#\Russian\CheckHash\bin\Debug\CheckHash.pdb
+D:\C#\Russian\CheckHash\bin\Debug\LevelsLogic.dll
+D:\C#\Russian\CheckHash\bin\Debug\DB.dll
+D:\C#\Russian\CheckHash\bin\Debug\MongoDB.Driver.dll
+D:\C#\Russian\CheckHash\bin\Debug\MongoDB.Bson.dll
+D:\C#\Russian\CheckHash\bin\Debug\MongoDB.Driver.Core.dll
+D:\C#\Russian\CheckHash\bin\Debug\LevelsLogic.pdb
+D:\C#\Russian\CheckHash\bin\Debug\DB.pdb
+D:\C#\Russian\CheckHash\bin\Debug\MongoDB.Driver.xml
+D:\C#\Russian\CheckHash\bin\Debug\MongoDB.Bson.xml
+D:\C#\Russian\CheckHash\bin\Debug\MongoDB.Driver.Core.xml
+D:\C#\Russian\CheckHash\obj\Debug\CheckHash.exe
+D:\C#\Russian\CheckHash\obj\Debug\CheckHash.pdb

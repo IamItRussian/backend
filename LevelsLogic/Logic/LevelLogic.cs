@@ -20,13 +20,29 @@ namespace LevelsLogic.Logic
             }
         }
 
-        public string CheckTaskRussian(string ans, string id, int level, int part)
+        public string CheckTaskRussian(string ans, int level, int part)
         {
             if(level == 1)
             {
-                return _level1.CheckTast(ans, id);
+                return _level1.CheckTask(ans, part);
             }
             return null;
+        }
+        
+        public void DeleteAllLevel(int level)
+        {
+            if(level == 1)
+            {
+                _level1.DeleteAllLevel();
+            }
+        }
+
+        public void DeleteLevelPart(int level, int part)
+        {
+            if (level == 1)
+            {
+                _level1.DeleteLevelPart(part);
+            }
         }
 
         public TaskRussian GetTaskRussian(int level, int part)

@@ -17,9 +17,22 @@ namespace Russian.Controllers
 
         public JsonResult Index()
         {
+            return Json(new { Result = "Index" }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost, Route("level/{level}/{part}/new")]
+        public JsonResult AddTask(int level, int part, string text, string ans, string description)
+        {
+            _levelLogic.AddTakRussian(level, part, text, ans, description);
             return Json(new { Result = "OK" }, JsonRequestBehavior.AllowGet);
         }
-        
+
+        [HttpPost, Route("level/{level}/{part}")]
+        public JsonResult Check(int level, int part,string ans)
+        {
+            return Json(new { Result = _levelLogic.CheckTaskRussian(ans, level, part) }, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpGet, Route("level/{level}/{part}")]
         public JsonResult GetTask(int level, int part)
         {
@@ -29,10 +42,16 @@ namespace Russian.Controllers
             else
                 return Json(new { Result = task }, JsonRequestBehavior.AllowGet);
         }
-        [HttpPost, Route("level/{level}/{part}/new")]
-        public JsonResult AddTask(int level, int part, string text, string ans, string description)
+        [HttpDelete, Route("level/{level}/{part}")]
+        public JsonResult DeletePartOfLevel(int level, int part)
         {
-            _levelLogic.AddTakRussian(level, part, text, ans, description);
+            _levelLogic.DeleteLevelPart(level, part);
+            return Json(new { Result = "OK" }, JsonRequestBehavior.AllowGet);
+        }
+        [HttpDelete, Route("level/{level}")]
+        public JsonResult DeleteAllLevel(int level)
+        {
+            _levelLogic.DeleteAllLevel(level);
             return Json(new { Result = "OK" }, JsonRequestBehavior.AllowGet);
         }
     }

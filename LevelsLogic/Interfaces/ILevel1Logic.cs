@@ -9,8 +9,10 @@ namespace LevelsLogic.Interfaces
 {
     public interface ILevel1Logic
     {
-        DataLevel1 GetTast(int part);
-        String CheckTast(String ans, String id);
         void AddTask(String text,String  ans, String description, int part);
+        string CheckTask(string ans, int part);
+        void DeleteLevelPart(int part);
+        void DeleteAllLevel();
+        DataLevel1 GetTast(int part);
     }
 }

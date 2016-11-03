@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{299E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelsLogic", "LevelsLogic\LevelsLogic.csproj", "{01FA09A0-C9E3-495D-85BD-E6BBFB150362}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckHash", "CheckHash\CheckHash.csproj", "{CED68EDF-0CA0-4F2B-9E13-5AC3261F44F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{01FA09A0-C9E3-495D-85BD-E6BBFB150362}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01FA09A0-C9E3-495D-85BD-E6BBFB150362}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01FA09A0-C9E3-495D-85BD-E6BBFB150362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CED68EDF-0CA0-4F2B-9E13-5AC3261F44F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CED68EDF-0CA0-4F2B-9E13-5AC3261F44F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CED68EDF-0CA0-4F2B-9E13-5AC3261F44F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CED68EDF-0CA0-4F2B-9E13-5AC3261F44F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
