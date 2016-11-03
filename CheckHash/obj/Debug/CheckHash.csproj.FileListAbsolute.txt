@@ -14,3 +14,6 @@ D:\C#\Russian\CheckHash\bin\Debug\MongoDB.Bson.xml
 D:\C#\Russian\CheckHash\bin\Debug\MongoDB.Driver.Core.xml
 D:\C#\Russian\CheckHash\obj\Debug\CheckHash.exe
 D:\C#\Russian\CheckHash\obj\Debug\CheckHash.pdb
+C:\src\russian2\backend\CheckHash\bin\Debug\CheckHash.exe.config
+C:\src\russian2\backend\CheckHash\obj\Debug\CheckHash.exe
+C:\src\russian2\backend\CheckHash\obj\Debug\CheckHash.pdb
