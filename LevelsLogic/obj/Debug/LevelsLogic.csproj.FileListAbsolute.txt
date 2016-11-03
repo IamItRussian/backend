@@ -1,0 +1,13 @@
+D:\C#\Russian\LevelsLogic\bin\Debug\LevelsLogic.dll
+D:\C#\Russian\LevelsLogic\bin\Debug\LevelsLogic.pdb
+D:\C#\Russian\LevelsLogic\bin\Debug\DB.dll
+D:\C#\Russian\LevelsLogic\bin\Debug\MongoDB.Bson.dll
+D:\C#\Russian\LevelsLogic\bin\Debug\MongoDB.Driver.dll
+D:\C#\Russian\LevelsLogic\bin\Debug\MongoDB.Driver.Core.dll
+D:\C#\Russian\LevelsLogic\bin\Debug\DB.pdb
+D:\C#\Russian\LevelsLogic\bin\Debug\MongoDB.Bson.xml
+D:\C#\Russian\LevelsLogic\bin\Debug\MongoDB.Driver.xml
+D:\C#\Russian\LevelsLogic\bin\Debug\MongoDB.Driver.Core.xml
+D:\C#\Russian\LevelsLogic\obj\Debug\LevelsLogic.csprojResolveAssemblyReference.cache
+D:\C#\Russian\LevelsLogic\obj\Debug\LevelsLogic.dll
+D:\C#\Russian\LevelsLogic\obj\Debug\LevelsLogic.pdb

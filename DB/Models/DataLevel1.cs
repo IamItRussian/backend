@@ -9,6 +9,6 @@ namespace DB.Models
     public class DataLevel1:BaseEntity
     {
         public String Text { get; set; }
-        public bool Ans { get; set; }
+        public bool[] Ans { get; set; }
     }
 }
