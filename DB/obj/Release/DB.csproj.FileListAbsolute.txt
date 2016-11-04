@@ -1,0 +1,11 @@
+D:\C#\Russian\DB\bin\Release\DB.dll
+D:\C#\Russian\DB\bin\Release\DB.pdb
+D:\C#\Russian\DB\bin\Release\MongoDB.Bson.dll
+D:\C#\Russian\DB\bin\Release\MongoDB.Driver.Core.dll
+D:\C#\Russian\DB\bin\Release\MongoDB.Driver.dll
+D:\C#\Russian\DB\bin\Release\MongoDB.Bson.xml
+D:\C#\Russian\DB\bin\Release\MongoDB.Driver.xml
+D:\C#\Russian\DB\bin\Release\MongoDB.Driver.Core.xml
+D:\C#\Russian\DB\obj\Release\DB.csprojResolveAssemblyReference.cache
+D:\C#\Russian\DB\obj\Release\DB.dll
+D:\C#\Russian\DB\obj\Release\DB.pdb

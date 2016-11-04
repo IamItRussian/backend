@@ -53,6 +53,25 @@ namespace LevelsLogic.Logic
             return result;
         }
 
+        public static int GetNumberOfMistakes(string ans)
+        {
+            int result = 0;
+            char degree;
+            for (int i = 0; i < ans.Length; i++)
+            {
+                degree = (char)1;
+                for (int j = 0; j < 16; j++)
+                {
+                    if((degree&ans[i]) > 0)
+                    {
+                        result++;
+                    }
+                    degree = (char)(2*degree);
+                }
+            }
+            return result;
+        }
+
         public void AddTask(string text, String ans, String description, int part)
         {
             DataLevel1 data = new DataLevel1();
@@ -71,6 +90,7 @@ namespace LevelsLogic.Logic
             {
                 check += ((char)(ans[i] ^ correctAns[i]));
             }
+            //GetNumberOfMistakes(check);
             return check;
         }
 
