@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Russian.App_Start
 {
-    public class ApplicationIdentityContext : IDisposable, IdentityDbContext
+    public class ApplicationIdentityContext : IDisposable
     {
 
 
