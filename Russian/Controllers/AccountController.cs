@@ -25,7 +25,7 @@ namespace Russian.Controllers
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
-        private ApplicationSignInManager _signinmanager;
+        //private ApplicationSignInManager _signinmanager;
 
 
 
@@ -61,6 +61,7 @@ namespace Russian.Controllers
             }
         }
 
+        
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
 
         // GET api/Account/UserInfo
@@ -354,7 +355,7 @@ namespace Russian.Controllers
         }
 
         [HttpPost]
-        [Route("login")]
+        [Route("Login")]
         [AllowAnonymous]
         public async Task<IHttpActionResult> Login(UserLoginModel model)
         {
