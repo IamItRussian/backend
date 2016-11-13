@@ -6,6 +6,7 @@ using Microsoft.Owin;
 using Russian.Models;
 using System.Security.Claims;
 using Microsoft.Owin.Security;
+using Russian.App_Start;
 
 namespace Russian
 {
@@ -20,7 +21,7 @@ namespace Russian
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationIdentityContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
