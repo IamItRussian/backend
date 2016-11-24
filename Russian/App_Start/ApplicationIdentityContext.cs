@@ -18,11 +18,11 @@ namespace Russian.App_Start
             var client = new MongoClient();
             var database = client.GetDatabase("russian");
             var users = database.GetCollection<ApplicationUser>("users");
-            var roles = database.GetCollection<IdentityRole>("roles");
+            var roles = database.GetCollection<ApplicationRole>("roles");
 
             return new ApplicationIdentityContext(users, roles);
         }
-        private ApplicationIdentityContext(IMongoCollection<ApplicationUser> users, IMongoCollection<IdentityRole> roles)
+        private ApplicationIdentityContext(IMongoCollection<ApplicationUser> users, IMongoCollection<ApplicationRole> roles)
         {
             Users = users;
             Roles = roles;
@@ -30,7 +30,7 @@ namespace Russian.App_Start
 
         public IMongoCollection<ApplicationUser> Users { get; set; }
         
-        public IMongoCollection<IdentityRole> Roles { get; set; }
+        public IMongoCollection<ApplicationRole> Roles { get; set; }
 
         public void Dispose()
         {

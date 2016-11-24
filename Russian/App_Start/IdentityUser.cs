@@ -21,7 +21,7 @@ namespace Russian.App_Start
         }
 
         public string Id{ get; }
-
+        public int Rating { get; set; }
         public string UserName{ get; set; }
         public virtual string Email { get; set; }
 

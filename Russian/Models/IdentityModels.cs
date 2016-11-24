@@ -12,10 +12,10 @@ namespace Russian.Models
     {
 
 
-        public string Name;
-        public string LastName;
-        public string Password;
-        public double Rating;
+        //public string Name;
+        //public string LastName;
+        //public string Password;
+        //public double Rating { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
@@ -43,6 +43,11 @@ namespace Russian.Models
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+    }
+
+    public class ApplicationRole : IdentityRole
+    {
+        int NumberOfRoles { get; set; }
     }
     
 
