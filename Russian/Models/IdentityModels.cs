@@ -15,7 +15,7 @@ namespace Russian.Models
         //public string Name;
         //public string LastName;
         //public string Password;
-        //public double Rating { get; set; }
+        public double Rating { get; set; }//можно использовать claim
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
