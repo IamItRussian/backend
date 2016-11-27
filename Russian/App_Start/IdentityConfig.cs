@@ -21,19 +21,19 @@ namespace Russian
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            //var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationIdentityContext>()));
-            var manager = new ApplicationUserManager(new App_Start.UserStore<ApplicationUser>(context.Get<ApplicationIdentityContext>()));
-            //HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>()
+            
+            var manager = new ApplicationUserManager(new App_Start.UserStore<ApplicationUser>(context.Get<ApplicationIdentityContext>()));//HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>()
+
 
             //var db = context.Get<ApplicationIdentityContext>();
             //var manager = new ApplicationUserManager(new App_Start.UserStore<ApplicationUser>(db));
-            return manager;
-            
+
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
             };
+            
             
             manager.PasswordValidator = new PasswordValidator
             {
