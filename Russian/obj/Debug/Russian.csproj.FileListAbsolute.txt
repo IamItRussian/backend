@@ -85,3 +85,6 @@ D:\C#\Russian\Russian\bin\System.Web.Http.Owin.xml
 D:\C#\Russian\Russian\bin\DB.pdb
 D:\C#\Russian\Russian\obj\Debug\Russian.dll
 D:\C#\Russian\Russian\obj\Debug\Russian.pdb
+C:\src\russian2\backend\Russian\obj\Debug\Russian.csprojResolveAssemblyReference.cache
+C:\src\russian2\backend\Russian\obj\Debug\Russian.dll
+C:\src\russian2\backend\Russian\obj\Debug\Russian.pdb

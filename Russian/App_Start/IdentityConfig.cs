@@ -6,6 +6,7 @@ using Microsoft.Owin;
 using Russian.Models;
 using System.Security.Claims;
 using Microsoft.Owin.Security;
+using Russian.App_Start;
 
 namespace Russian
 {
@@ -20,14 +21,20 @@ namespace Russian
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
-            // Configure validation logic for usernames
+            
+            var manager = new ApplicationUserManager(new App_Start.UserStore<ApplicationUser>(context.Get<ApplicationIdentityContext>()));//HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>()
+
+
+            //var db = context.Get<ApplicationIdentityContext>();
+            //var manager = new ApplicationUserManager(new App_Start.UserStore<ApplicationUser>(db));
+
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
             };
-            // Configure validation logic for passwords
+            
+            
             manager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,

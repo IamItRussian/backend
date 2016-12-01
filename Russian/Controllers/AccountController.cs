@@ -25,7 +25,7 @@ namespace Russian.Controllers
     {
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
-        private ApplicationSignInManager _signinmanager;
+        //private ApplicationSignInManager _signinmanager;
 
 
 
@@ -61,7 +61,47 @@ namespace Russian.Controllers
             }
         }
 
+        
         public ISecureDataFormat<AuthenticationTicket> AccessTokenFormat { get; private set; }
+
+
+        // POST api/Account/Register
+        [AllowAnonymous]
+        [Route("Register")]
+        [HttpPost]
+        public async Task<IHttpActionResult> Register(UserRegistrationModel model)
+        {
+
+            var user = new ApplicationUser { Email = model.Email, EmailConfirmed = false };//поправить значения
+
+            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
+
+            if (!result.Succeeded)
+            {
+                return GetErrorResult(result);
+            }
+
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("Login")]
+        [AllowAnonymous]
+        public async Task<IHttpActionResult> Login(UserLoginModel model)
+        {
+            var user = await UserManager.FindByEmailAsync(model.Email);
+            if (user != null && await UserManager.CheckPasswordAsync(user, model.Password))
+            {
+
+                var userIdentity = await user.GenerateUserIdentityAsync(UserManager, DefaultAuthenticationTypes.ApplicationCookie);
+                //AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = true }, userIdentity);
+                AuthenticationManager.SignOut();
+                AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = true }, userIdentity);
+                return Ok();
+
+            }
+            return 
+        }
 
         // GET api/Account/UserInfo
         [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
@@ -330,47 +370,7 @@ namespace Russian.Controllers
             return logins;
         }
 
-        // POST api/Account/Register
-        [AllowAnonymous]
-        [Route("Register")]
-        [HttpPost]
-        public async Task<IHttpActionResult> Register(UserRegistrationModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var user = new ApplicationUser { Name = model.Name, Email = model.Email, EmailConfirmed = false };
-
-            IdentityResult result = await UserManager.CreateAsync(user, model.Password);
-
-            if (!result.Succeeded)
-            {
-                return GetErrorResult(result);
-            }
-
-            return Ok();
-        }
-
-        [HttpPost]
-        [Route("login")]
-        [AllowAnonymous]
-        public async Task<IHttpActionResult> Login(UserLoginModel model)
-        {
-            var user = await UserManager.FindByEmailAsync(model.Email);
-            if (user != null && await UserManager.CheckPasswordAsync(user, model.Password))
-            {
-
-                var userIdentity = await user.GenerateUserIdentityAsync(UserManager, DefaultAuthenticationTypes.ApplicationCookie);
-                //AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = true }, userIdentity);
-                AuthenticationManager.SignOut();
-                AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = true }, userIdentity);
-                return Ok();
-
-            }
-            return BadRequest();
-        }
+     
 
         // POST api/Account/RegisterExternal
         [OverrideAuthentication]

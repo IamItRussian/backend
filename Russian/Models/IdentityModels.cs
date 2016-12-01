@@ -12,10 +12,10 @@ namespace Russian.Models
     {
 
 
-        public string Name;
-        public string LastName;
-        public string Password;
-        public double Rating;
+        //public string Name;
+        //public string LastName;
+        //public string Password;
+        public double Rating { get; set; }//можно использовать claim
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
@@ -44,16 +44,11 @@ namespace Russian.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
     }
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+
+    public class ApplicationRole : IdentityRole
     {
-        public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
-        {
-        }
-        
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
+        int NumberOfRoles { get; set; }
     }
+    
+
 }

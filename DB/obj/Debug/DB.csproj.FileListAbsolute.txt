@@ -9,3 +9,14 @@ D:\C#\Russian\DB\bin\Debug\MongoDB.Driver.Core.xml
 D:\C#\Russian\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
 D:\C#\Russian\DB\obj\Debug\DB.dll
 D:\C#\Russian\DB\obj\Debug\DB.pdb
+C:\src\russian2\backend\DB\bin\Debug\DB.dll
+C:\src\russian2\backend\DB\bin\Debug\DB.pdb
+C:\src\russian2\backend\DB\bin\Debug\MongoDB.Bson.dll
+C:\src\russian2\backend\DB\bin\Debug\MongoDB.Driver.Core.dll
+C:\src\russian2\backend\DB\bin\Debug\MongoDB.Driver.dll
+C:\src\russian2\backend\DB\bin\Debug\MongoDB.Bson.xml
+C:\src\russian2\backend\DB\bin\Debug\MongoDB.Driver.xml
+C:\src\russian2\backend\DB\bin\Debug\MongoDB.Driver.Core.xml
+C:\src\russian2\backend\DB\obj\Debug\DB.csprojResolveAssemblyReference.cache
+C:\src\russian2\backend\DB\obj\Debug\DB.dll
+C:\src\russian2\backend\DB\obj\Debug\DB.pdb
